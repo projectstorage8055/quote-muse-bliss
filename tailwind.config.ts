@@ -57,6 +57,10 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        'quote-primary': 'hsl(var(--quote-primary))',
+        'quote-accent': 'hsl(var(--quote-accent))',
+        'quote-muted': 'hsl(var(--quote-muted))',
+        'quote-background': 'hsl(var(--quote-background))',
       },
       borderRadius: {
         lg: "var(--radius)",

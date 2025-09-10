@@ -1,73 +1,90 @@
-# Welcome to your Lovable project
+# Daily Inspiration - Random Quote Generator
+**Project Owner:** khorn kimkhimmengkheang
 
-## Project info
+## Brief Description
+A beautiful single-page web application that displays random inspirational quotes with a click of a button. Built using React 18.x.x, TypeScript, Tailwind CSS, and designed with a modern gradient aesthetic. The application will connect to a Supabase database for unlimited quote storage and retrieval.
 
-**URL**: https://lovable.dev/projects/758f3f3b-ea26-40b0-8659-5b6c82cd9df9
+## Technologies Used
+- **Frontend:** React 18.3.1, TypeScript, Tailwind CSS
+- **UI Components:** shadcn/ui, Lucide React icons
+- **Backend:** Supabase (for database and API)
+- **Build Tool:** Vite
+- **Styling:** Custom design system with gradients and animations
 
-## How can I edit this code?
+## Setup Instructions
 
-There are several ways of editing your application.
+### Prerequisites
+- Node.js & npm installed ([install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating))
 
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/758f3f3b-ea26-40b0-8659-5b6c82cd9df9) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
+### Installation Steps
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
+# Clone the repository
 git clone <YOUR_GIT_URL>
 
-# Step 2: Navigate to the project directory.
+# Navigate to the project directory
 cd <YOUR_PROJECT_NAME>
 
-# Step 3: Install the necessary dependencies.
-npm i
+# Install dependencies
+npm install
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start the development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+The application will be available at `http://localhost:8080`
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Architecture Explanation
 
-**Use GitHub Codespaces**
+### Current Implementation
+- **Frontend:** React single-page application with a clean, responsive design
+- **State Management:** React hooks for local state management
+- **UI/UX:** Custom design system with gradient backgrounds, smooth transitions, and hover effects
+- **Quote Display:** Currently uses sample quotes stored locally
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### Planned Architecture (with Database Integration)
+```
+Frontend (React) ↔ Backend API (Supabase) ↔ Database (PostgreSQL)
+```
 
-## What technologies are used for this project?
+1. **Frontend (React):** User interface with quote display and fetch button
+2. **Backend API (Supabase):** RESTful API endpoints for quote retrieval
+3. **Database (PostgreSQL):** Stores quotes with text, author, and metadata
 
-This project is built with:
+### Communication Flow
+1. User clicks "Get Quote" button
+2. Frontend sends API request to Supabase backend
+3. Backend queries PostgreSQL database for random quote
+4. Database returns quote data
+5. Backend sends quote to frontend
+6. Frontend displays quote with smooth animations
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## Features
+- ✅ Beautiful, responsive design with gradient aesthetics
+- ✅ Smooth animations and hover effects
+- ✅ Toast notifications for user feedback
+- ✅ Loading states with spin animations
+- ✅ Mobile-friendly responsive layout
+- 🔄 **Coming Soon:** Database integration with unlimited quotes
 
-## How can I deploy this project?
+## Next Steps
+To enable database functionality:
+1. Connect to Supabase using the native Lovable integration
+2. Create quotes table in Supabase database  
+3. Implement API endpoints for quote retrieval
+4. Replace sample quotes with database queries
 
-Simply open [Lovable](https://lovable.dev/projects/758f3f3b-ea26-40b0-8659-5b6c82cd9df9) and click on Share -> Publish.
+## Project Structure
+```
+src/
+├── components/
+│   ├── ui/              # shadcn/ui components
+│   └── QuoteCard.tsx    # Main quote display component
+├── pages/
+│   └── Index.tsx        # Main page component
+├── hooks/               # Custom React hooks
+├── lib/                 # Utility functions
+└── index.css           # Design system and global styles
+```
 
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+---
+*Built with ❤️ using React and modern web technologies*
